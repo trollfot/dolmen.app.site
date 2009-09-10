@@ -13,7 +13,7 @@
   <include package="dolmen.app.authentication" />
 
   <!-- Themes and other layout plugins -->
-  <include package="dolmen.forms.layout" />
+  <include package="megrok.z3cform.layout" />
 
   <!-- Translations -->
   <include package="dolmen.translations" />
