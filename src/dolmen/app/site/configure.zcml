@@ -5,16 +5,6 @@
   <include package="dolmen.app.security" />
   <include package="dolmen.content" file="meta.zcml" />
 
-  <!-- Application core -->
-  <include package="zc.resourcelibrary" />
-  <include package="dolmen.app.layout" />
-  <include package="dolmen.app.content" />
-  <include package="dolmen.app.metadatas" />
-  <include package="dolmen.app.authentication" />
-
-  <!-- Themes and other layout plugins -->
-  <include package="megrok.z3cform.layout" />
-
   <!-- Translations -->
   <include package="dolmen.translations" />
 

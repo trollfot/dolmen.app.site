@@ -3,13 +3,13 @@ from os.path import join
 
 name = 'dolmen.app.site'
 version = '0.1'
-readme = open("README.txt").read()
+readme = open(join("src", "dolmen", "app", "site", "README.txt")).read()
 history = open(join('docs', 'HISTORY.txt')).read().replace(name + ' - ', '')
 
 setup(name = name,
       version = version,
       description = 'Dolmen CMS',
-      long_description = readme[readme.find('\n\n'):] + '\n' + history,
+      long_description = readme + '\n\n' + history,
       keywords = 'Grok Zope3 CMS Dolmen',
       author = 'Souheil Chelfouh',
       author_email = 'souheil@chelfouh.com',
@@ -26,15 +26,9 @@ setup(name = name,
           'setuptools',
           'grok',
           'grokcore.startup',
-          'grokui.admin',
-          'megrok.z3cform.layout',
           'dolmen.content',
-          'dolmen.app.content',
-          'dolmen.app.authentication',
-          'dolmen.app.metadatas',
           'dolmen.translations',
-          'dolmen.relations',
-          'zc.resourcelibrary'
+          'dolmen.app.security',
       ],
       classifiers = [
         'Development Status :: 4 - Beta',

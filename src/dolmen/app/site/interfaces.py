@@ -2,6 +2,7 @@
 
 from zope.interface import Interface
 
+
 class IDolmen(Interface):
     """This interface defines a Dolmen site root.
     """
