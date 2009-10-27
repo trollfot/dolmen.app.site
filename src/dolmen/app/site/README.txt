@@ -23,3 +23,6 @@ This creation of Dolmen Application is straightforward::
 
     >>> rocks.title
     u'My Dolmen Site'
+
+    >>> rocks.getSiteManager()
+    <LocalSiteManager ++etc++site>
