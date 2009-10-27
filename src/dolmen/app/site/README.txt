@@ -32,8 +32,8 @@ This creation of Dolmen Application is straightforward::
     <LocalSiteManager ++etc++site>
 
 
-Dolmen is a `dolmen.content` Container (read `dolmen.content`)
-documentation for more information::
+Dolmen is a `dolmen.content` Container (read `dolmen.content`
+documentation for more information)::
 
     >>> from dolmen.content import IBaseContent, IContainer
     >>> IBaseContent.providedBy(rocks)
