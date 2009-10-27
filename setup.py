@@ -14,12 +14,6 @@ install_requires = [
     'grokcore.startup',
     ]
 
-tests_require = install_requires + [
-    'zope.testing',
-    'zope.app.testing',
-    'zope.app.zcmlfiles',
-    ]
-
 setup(name = name,
       version = version,
       description = 'Dolmen CMS',
@@ -36,9 +30,7 @@ setup(name = name,
       include_package_data = True,
       platforms = 'Any',
       zip_safe = False,
-      tests_require = tests_require,
       install_requires = install_requires,
-      extras_require = {'test': tests_require},
       test_suite="dolmen.app.site",
       classifiers = [
         'Development Status :: 4 - Beta',
