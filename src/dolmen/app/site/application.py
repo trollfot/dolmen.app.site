@@ -2,7 +2,12 @@
 
 import grok
 import dolmen.content as content
-from dolmen.app.site import IDolmen
+from zope.interface import Interface
+
+
+class IDolmen(Interface):
+    """This interface defines a Dolmen site root.
+    """
 
 
 class Dolmen(grok.Application, content.Container):

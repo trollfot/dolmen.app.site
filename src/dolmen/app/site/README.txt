@@ -12,17 +12,31 @@ This creation of Dolmen Application is straightforward::
 
     >>> import grok
     >>> from zope.event import notify
-    >>> from dolmen.app.site import Dolmen
+    >>> from dolmen.app.site import Dolmen, IDolmen
 
     >>> root = getRootFolder()
     >>> rocks = Dolmen()
     >>> notify(grok.ObjectCreatedEvent(rocks))
     >>> root['rocks'] = rocks
+
     >>> root.get('rocks').__class__.__name__
     'Dolmen'
 
     >>> rocks.title
     u'My Dolmen Site'
 
+    >>> IDolmen.providedBy(rocks)
+    True
+
     >>> rocks.getSiteManager()
     <LocalSiteManager ++etc++site>
+
+
+Dolmen is a `dolmen.content` Container (read `dolmen.content`)
+documentation for more information::
+
+    >>> from dolmen.content import IBaseContent, IContainer
+    >>> IBaseContent.providedBy(rocks)
+    True
+    >>> IContainer.providedBy(rocks)
+    True

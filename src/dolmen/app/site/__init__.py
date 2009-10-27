@@ -1,2 +1,1 @@
-from interfaces import IDolmen
-from application import Dolmen
+from application import Dolmen, IDolmen
