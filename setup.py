@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 from os.path import join
 
 name = 'dolmen.app.site'
-version = '0.1'
+version = '0.2dev'
 readme = open(join('src', 'dolmen', 'app', 'site', 'README.txt')).read()
 history = open(join('docs', 'HISTORY.txt')).read()
 
@@ -21,8 +21,7 @@ setup(name = name,
       keywords = 'Grok Zope3 CMS Dolmen',
       author = 'Souheil Chelfouh',
       author_email = 'trollfot@gmail.com',
-      url = 'http://gitweb.dolmen-project.org',
-      download_url = '',
+      url = 'http://www.dolmen-project.org',
       license = 'GPL',
       packages=find_packages('src', exclude=['ez_setup']),
       package_dir={'': 'src'},
@@ -41,8 +40,4 @@ setup(name = name,
         'Operating System :: OS Independent',
         'Programming Language :: Python',
       ],
-      entry_points = """
-      [paste.app_factory]
-      main = grokcore.startup:application_factory
-      """,
 )
