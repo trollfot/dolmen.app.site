@@ -10,24 +10,31 @@ the Dolmen object and the IDolmen interface.
 
 This creation of Dolmen Application is straightforward::
 
-    >>> import grok
+    >>> import grokcore.component as grok
     >>> from zope.event import notify
+    >>> from zope.lifecycleevent import ObjectCreatedEvent
     >>> from dolmen.app.site import Dolmen, IDolmen
 
-    >>> root = getRootFolder()
     >>> rocks = Dolmen()
-    >>> notify(grok.ObjectCreatedEvent(rocks))
-    >>> root['rocks'] = rocks
-
-    >>> root.get('rocks').__class__.__name__
-    'Dolmen'
-
-    >>> rocks.title
-    u'My Dolmen Site'
+    >>> notify(ObjectCreatedEvent(rocks))
 
     >>> IDolmen.providedBy(rocks)
     True
 
+It's a valid `zope.component` ``ISite``:
+
+    >>> import zope.component
+    >>> from zope.component.interfaces import ISite, IPossibleSite
+    >>> from zope.site.site import LocalSiteManager
+
+    >>> IPossibleSite.providedBy(rocks)
+    True
+
+    >>> ISite.providedBy(rocks)
+    False
+
+    >>> site = LocalSiteManager(rocks)
+    >>> rocks.setSiteManager(site)
     >>> rocks.getSiteManager()
     <LocalSiteManager ++etc++site>
 
@@ -35,8 +42,8 @@ This creation of Dolmen Application is straightforward::
 Dolmen is a `dolmen.content` Container (read `dolmen.content`
 documentation for more information)::
 
-    >>> from dolmen.content import IBaseContent, IContainer
-    >>> IBaseContent.providedBy(rocks)
+    >>> from dolmen.content import IContent, IContainer
+    >>> IContent.providedBy(rocks)
     True
     >>> IContainer.providedBy(rocks)
     True

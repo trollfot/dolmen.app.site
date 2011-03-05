@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-import grok
-import dolmen.content as content
+import grokcore.site
+import dolmen.content
 from zope.interface import Interface
 
 
@@ -10,9 +10,9 @@ class IDolmen(Interface):
     """
 
 
-class Dolmen(grok.Application, content.Container):
+class Dolmen(grokcore.site.Site, dolmen.content.Container):
     """A Dolmen Site Manager.
     """
-    grok.implements(IDolmen)
-    content.nofactory()
-    title = u"My Dolmen Site"
+    dolmen.content.nofactory()
+    grokcore.site.implements(
+        IDolmen, grokcore.site.interfaces.IApplication)
