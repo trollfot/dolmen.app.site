@@ -4,6 +4,8 @@ Changelog
 0.2 (2011-03-06)
 ----------------
 
+- Added proper license file and tagging (ZPL).
+
 - Don't use z3c.testsetup for tests anymore.
 
 - Dependencies on ``Grok`` has been dumped. We now depend on
